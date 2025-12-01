@@ -2,175 +2,823 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Dr. Thomas K. Gugler – Islamexperte & Südasienwissenschaftler</title>
+  <title>Dr. Thomas K. Gugler – Islamexperte &amp; Südasienwissenschaftler</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Homepage von Dr. Thomas K. Gugler, Islamexperte, Südasienwissenschaftler und Religionswissenschaftler.">
+  <meta name="description" content="Offizielle Seite von Dr. Thomas K. Gugler, Islamexperte, Südasienwissenschaftler und Religionswissenschaftler. Analysen zu politischem Islam, religiöser Pluralität und Sexualpolitik in Südasien und Europa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #111827;
+      --card: #111827;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.12);
+      --text: #e5e7eb;
+      --text-soft: #9ca3af;
+      --border-soft: #1f2933;
+      --max-width: 1080px;
+      --radius-lg: 18px;
+      --shadow-lg: 0 20px 45px rgba(15,23,42,0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
+      color: var(--text);
       line-height: 1.6;
-      color: #222;
     }
-    header {
-      background: #f4f4f4;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav a {
-      margin-right: 1.5rem;
+
+    a {
+      color: var(--accent);
       text-decoration: none;
-      color: #333;
-      font-weight: 500;
     }
-    nav a:hover {
+
+    a:hover {
       text-decoration: underline;
     }
-    .hero {
-      padding: 3rem 2rem 2rem;
-      background: #fafafa;
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.98), rgba(15,23,42,0.8));
+      border-bottom: 1px solid rgba(148,163,184,0.14);
     }
-    .hero h1 {
-      margin-top: 0;
-      font-size: 2rem;
-    }
-    main {
-      max-width: 900px;
+
+    .nav-inner {
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 2rem;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    section {
-      margin-bottom: 3rem;
-    }
-    h2 {
-      margin-top: 0;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.3rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    footer {
-      padding: 1.5rem 2rem;
-      background: #f4f4f4;
+
+    .brand {
+      font-weight: 600;
+      letter-spacing: .04em;
       font-size: 0.9rem;
-      text-align: center;
+      text-transform: uppercase;
+      color: #e5e7eb;
     }
-    @media (max-width: 600px) {
-      header, .hero, main {
-        padding: 1rem;
-      }
+
+    nav a {
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      max-width: var(--max-width);
+      margin: 2.5rem auto 1.5rem;
+      padding: 1.5rem 1.5rem 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      margin: 0 0 0.65rem;
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      max-width: 34rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(56,189,248,0.4);
+      font-size: 0.8rem;
+      color: #e0f2fe;
+      white-space: nowrap;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #0b1120;
+      box-shadow: 0 15px 35px rgba(8,47,73,0.75);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.03);
+      text-decoration: none;
+    }
+
+    .btn-ghost {
+      border-color: rgba(148,163,184,0.5);
+      color: var(--text-soft);
+      background: rgba(15,23,42,0.8);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin-top: 0.9rem;
+    }
+
+    .portrait-wrap {
+      justify-self: center;
+    }
+
+    .portrait-card {
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.2), transparent 58%),
+                  radial-gradient(circle at 100% 100%, rgba(56,189,248,0.12), transparent 60%),
+                  var(--card);
+      border-radius: 28px;
+      padding: 0.9rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(148,163,184,0.18);
+    }
+
+    .portrait-inner {
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .portrait-inner img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .portrait-label {
+      position: absolute;
+      bottom: 0.9rem;
+      left: 0.9rem;
+      background: rgba(15,23,42,0.84);
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      color: #e5e7eb;
+      border: 1px solid rgba(148,163,184,0.5);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+
+    section {
+      margin-top: 2.5rem;
+    }
+
+    section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    section .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin-bottom: 1.4rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.2rem;
+      border: 1px solid rgba(148,163,184,0.18);
+    }
+
+    .card + .card {
+      margin-top: 1rem;
+    }
+
+    .muted {
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .pill {
+      padding: 0.25rem 0.6rem;
+      background: rgba(15,23,42,0.9);
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.35);
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .pub-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.2rem 0 0;
+      font-size: 0.9rem;
+    }
+
+    .pub-list li {
+      margin-bottom: 0.45rem;
+    }
+
+    .pub-year {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-top: 0.7rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .timeline {
+      border-left: 1px solid rgba(148,163,184,0.35);
+      padding-left: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 0.8rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.18rem;
+      top: 0.3rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(56,189,248,0.25);
+    }
+
+    .timeline-range {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 0.05rem;
+    }
+
+    .timeline-role {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .timeline-inst {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .media-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 0.85rem 0.95rem;
+      border: 1px dashed rgba(148,163,184,0.4);
+      font-size: 0.9rem;
+    }
+
+    .media-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 0.2rem;
+    }
+
+    .media-title {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(56,189,248,0.14);
+      border: 1px solid rgba(56,189,248,0.5);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #e0f2fe;
+    }
+
+    .columns-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem 2.5rem;
+    }
+
+    .small {
+      font-size: 0.85rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(148,163,184,0.14);
+      padding: 1.2rem 1.5rem 1.8rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 820px) {
       nav a {
-        display: inline-block;
-        margin: 0.3rem 0.8rem 0.3rem 0;
+        margin-left: 1rem;
+        font-size: 0.85rem;
+      }
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .portrait-wrap {
+        order: -1;
+        max-width: 260px;
+        width: 100%;
+        margin: 0 auto 1.7rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-inner {
+        padding-inline: 1rem;
+      }
+      .hero {
+        padding-inline: 1rem;
+      }
+      main {
+        padding-inline: 1rem;
+      }
+      nav {
+        display: none; /* wenn du mobile Navigation willst, könnte man hier später ein Menü ergänzen */
+      }
+      header {
+        padding-block: 0.3rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="#start">Start</a>
-      <a href="#profil">Profil</a>
-      <a href="#forschung">Forschung</a>
-      <a href="#publikationen">Publikationen</a>
-      <a href="#lebenslauf">Lebenslauf</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
+    <div class="nav-inner">
+      <div class="brand">Dr. Thomas K. Gugler</div>
+      <nav>
+        <a href="#profil">Profil</a>
+        <a href="#forschung">Forschung</a>
+        <a href="#publikationen">Publikationen</a>
+        <a href="#medien">Medien &amp; Beratung</a>
+        <a href="#cv">Lebenslauf</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="hero" id="start">
-    <h1>Dr. Thomas K. Gugler</h1>
-    <p><strong>Islamexperte · Südasienwissenschaftler · Religionswissenschaftler</strong></p>
-    <p>Analysen zu politischem Islam, religiöser Pluralität und Sexualpolitik in Südasien und Europa.</p>
-  </div>
+  <section class="hero" id="start">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">Islamexpertise · Südasien · Religionswissenschaft</div>
+        <h1>Analysen zu politischem Islam, Pluralität &amp; Sexualpolitik</h1>
+        <p class="hero-subtitle">
+          Ich forsche zu Islam in Südasien und Europa, religiöser Pluralität, islamistischen Bewegungen
+          sowie Religion, Geschlecht und Sexualität. Als Islamexperte und Südasienwissenschaftler
+          kommentiere ich aktuelle Entwicklungen in Pakistan, Afghanistan und der weiteren Region.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">politischer Islam &amp; Islamismus</span>
+          <span class="tag">Pakistan, Indien, Afghanistan</span>
+          <span class="tag">religiöse Pluralität &amp; Minderheiten</span>
+          <span class="tag">Religion, Geschlecht &amp; Sexualität</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="mailto:thomas.gugler@gmail.com?subject=Anfrage%20Interview%20/%20Hintergrundgespraech">
+            Interview- &amp; Beratungsanfragen
+          </a>
+          <a class="btn-ghost" href="#publikationen">
+            Auswahl an Publikationen ansehen
+          </a>
+        </div>
+        <div class="hero-note">
+          Medienerfahrung u.a. mit Dokumentationsstelle Politischer Islam, Gerda Henkel Stiftung,
+          <em>Jungle World</em>, <em>iz3w</em>, <em>WOXX</em> und <em>Südasien</em>.
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="portrait-card">
+          <div class="portrait-inner">
+            <!-- Lege die Datei mit diesem Namen in denselben Ordner wie index.html -->
+            <img src="fotoMedium.jpg" alt="Porträt von Dr. Thomas K. Gugler">
+            <div class="portrait-label">Dr. Thomas K. Gugler · Islamexperte &amp; Südasienwissenschaftler</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <main>
     <section id="profil">
       <h2>Profil</h2>
-      <p>Ich bin Islamwissenschaftler, Südasienwissenschaftler und Religionswissenschaftler mit einem Schwerpunkt auf Pakistan, Indien und Afghanistan. Ich arbeite zu islamischen Missionsbewegungen, politischem Islam, religiöser Pluralität sowie zu Religion, Geschlecht und Sexualität.</p>
-      <p>Meine Promotion im Fach Islamwissenschaft habe ich an der Universität Erfurt mit <em>summa cum laude</em> abgeschlossen. In meiner Habilitationsschrift untersuche ich Pluralitätskulturen zwischen Freiheit und Gewalt.</p>
+      <p class="section-subtitle">
+        Islamwissenschaft, Südasienwissenschaft und Religionswissenschaft mit regionalem Fokus auf Pakistan, Indien und Afghanistan.
+      </p>
+
+      <div class="grid-2 card">
+        <div>
+          <p>
+            Ich bin Islamwissenschaftler, Südasienwissenschaftler und Religionswissenschaftler. In meiner
+            Forschung kombiniere ich dichte Feldforschung in Südasien mit theoretischen Perspektiven auf
+            religiöse Pluralität, Gewalt, Geschlecht und Sexualpolitik.
+          </p>
+          <p>
+            Meine Promotion in Islamwissenschaft habe ich an der Universität Erfurt mit
+            <em>summa cum laude</em> abgeschlossen; meine Habilitationsschrift
+            <em>„Die Vielfalt der Anderen: Pluralitätskulturen zwischen Freiheit und Gewalt“</em> widmet sich
+            der Frage, wie gesellschaftliche und religiöse Vielfalt zwischen Freiheit, Kontrolle und Gewalt
+            verhandelt wird.:contentReference[oaicite:0]{index=0}
+          </p>
+          <p class="muted small">
+            Aktuell bin ich Postdoktorand am Frankfurter Forschungszentrum Globaler Islam (FFGI) der Goethe-Universität Frankfurt.
+          </p>
+        </div>
+        <div>
+          <div class="pill-list">
+            <span class="pill">islamische Missionsbewegungen (Daʿwat-e Islāmī, Tablīġī Jamāʿat)</span>
+            <span class="pill">Blasphemiepolitik &amp; religiöse Gewalt</span>
+            <span class="pill">Barelwī- und Deobandī-Traditionen</span>
+            <span class="pill">Queer Jihad &amp; Sexualpolitik</span>
+            <span class="pill">Laienprediger &amp; religiöse Autorität</span>
+            <span class="pill">Transnationale Religionsbewegungen</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="forschung">
-      <h2>Forschung &amp; Schwerpunkte</h2>
-      <ul>
-        <li>Islam in Südasien (u.a. Barelwī- und Deobandī-Traditionen, islamische Parteien und Laienprediger)</li>
-        <li>Politischer Islam, Islamismus und innerislamische Konflikte</li>
-        <li>Religiöse Pluralität, Minderheiten und Religionsfreiheit</li>
-        <li>Religion, Geschlecht und Sexualität, Queer Jihad, Sexualpolitik</li>
-        <li>Transnationale Bewegungen, Diaspora und islamische Mission in Europa</li>
-      </ul>
+      <h2>Forschung &amp; thematische Schwerpunkte</h2>
+      <p class="section-subtitle">
+        Forschung zwischen klassischer Islamwissenschaft, Südasienforschung und kritischer Religionswissenschaft.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Islam in Südasien</h3>
+          <p class="small">
+            Analyse sunnitischer und schiitischer Bewegungen, Barelwī- und Deobandī-Traditionen, islamischer
+            Parteien und Laienprediger in Pakistan und Indien. Besondere Aufmerksamkeit gilt der
+            Transformation der Sunna-Frömmigkeit, der Dynamik islamischer Missionsbewegungen und innerislamischer Konfliktlinien.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Politischer Islam &amp; religiöse Pluralität</h3>
+          <p class="small">
+            Forschung zu Islamismus, Blasphemiepolitik, Gewalt gegen religiöse Minderheiten sowie zu
+            Fragen von Religionsfreiheit und Gleichheit. Ein Schwerpunkt liegt auf der Wechselwirkung von
+            Staat, religiösen Bewegungen und zivilgesellschaftlichen Akteuren.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Religion, Geschlecht &amp; Sexualität</h3>
+          <p class="small">
+            Arbeiten zu Sexualpolitik in islamisch geprägten Kontexten, zu LGBTIQ+-Bewegungen in Südasien,
+            zu Queer Jihad, Körper- und Sexualnormen sowie zur Geschichte des Yoga und seiner globalen
+            Rezeption.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Transnationale Bewegungen &amp; Diaspora</h3>
+          <p class="small">
+            Transnationale Mobilität islamischer Missionsbewegungen, religiöse Vergemeinschaftung in der
+            Diaspora und neue Formen religiöser Autorität in digitalen Öffentlichkeiten.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="publikationen">
       <h2>Publikationen (Auswahl)</h2>
-      <h3>Monographien</h3>
-      <ul>
-        <li><em>Sunnaisierung und Blasphemiepolitik am Beispiel islamischer Laienprediger</em>, Wien 2024.</li>
-        <li><em>Mission Medina: Daʿwat-e Islāmī und Tablīġī Ǧamāʿat</em>, Würzburg 2011.</li>
-        <li><em>Ozeanisches Gefühl der Unsterblichkeit. Der Krishnamritamahārṇava des Madhva</em>, Berlin 2009.</li>
-        <li><em>Anmerkungen zur Historizität des Krishna</em>, München 2008.</li>
-      </ul>
-
-      <h3>Herausgegebener Band</h3>
-      <ul>
-        <li>(Mithrsg.) <em>Dynamics of Islam in the Modern World. Essays in Honor of Jamal Malik</em>, Leiden 2022.</li>
-      </ul>
-
-      <h3>Ausgewählte Aufsätze</h3>
-      <ul>
-        <li>„Pakistanische Prediger: Die islamische Missionsbewegung Daʿwat-e Islāmī“, in: <em>Interkulturelle Theologie</em>, 2018.</li>
-        <li>„Buddhist Zion: Sri Lanka’s Sinhalisation Politics toward its Muslim Minority“, in: <em>South Asia Chronicle</em>, 2013.</li>
-        <li>„Muslim Youths on Tablīghī Journeys“, in: <em>Asien</em>, 2013.</li>
-        <li>„The New Religiosity of Tablīghī Jamāʿat and Daʿwat-e Islāmī and the Transformation of Islam in Europe“, in: <em>Anthropos</em>, 2010.</li>
-      </ul>
-
-      <p>Eine vollständige Publikationsliste stelle ich als PDF zur Verfügung und verweise auf mein Profil bei Academia.edu:
-        <br><a href="https://uni-frankfurt.academia.edu/ThomasGugler" target="_blank" rel="noopener">uni-frankfurt.academia.edu/ThomasGugler</a>
+      <p class="section-subtitle">
+        Eine vollständige, laufend aktualisierte Liste meiner Publikationen finden Sie auf meinem Profil bei Academia.edu.
       </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Monographien &amp; Herausgeberschaften</h3>
+          <div class="pub-year">Monographien</div>
+          <ul class="pub-list">
+            <li><strong>Sunnaisierung und Blasphemiepolitik am Beispiel islamischer Laienprediger</strong>. Wien: Dokumentationsstelle Politischer Islam, 2024.</li>
+            <li><strong>Mission Medina: Daʿwat-e Islāmī und Tablīġī Ǧamāʿat</strong>. Würzburg: Ergon, 2011.</li>
+            <li><strong>Ozeanisches Gefühl der Unsterblichkeit. Der Krishnamritamahārṇava des Madhva</strong>. Berlin: Lit, 2009.</li>
+            <li><strong>Anmerkungen zur Historizität des Krishna</strong>. München: Grin, 2008.</li>
+          </ul>
+
+          <div class="pub-year">Herausgegeben</div>
+          <ul class="pub-list">
+            <li>mit Saeed Zarrabi-Zadeh, Armina Omerika &amp; Michael E. Asbury:
+              <strong>Dynamics of Islam in the Modern World. Essays in Honor of Jamal Malik</strong>.
+              Leiden: Brill, 2022.</li>
+          </ul>
+
+          <p class="small muted" style="margin-top:0.6rem;">
+            Rezensionen u.a. in <em>Anthropos</em>, <em>Asien</em>, <em>ZDMG</em>, <em>Zeitschrift für Religionswissenschaft</em> und anderen Fachzeitschriften.:contentReference[oaicite:1]{index=1}
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Ausgewählte Fachaufsätze</h3>
+          <div class="pub-year">Zeitschriften</div>
+          <ul class="pub-list">
+            <li>„Pakistanische Prediger: Die islamische Missionsbewegung Daʿwat-e Islāmī“, in:
+              <em>Interkulturelle Theologie</em> / <em>Zeitschrift für Missionswissenschaft und Religionswissenschaft</em>, 2018.</li>
+            <li>„Buddhist Zion: Sri Lanka’s Sinhalisation Politics toward its Muslim Minority“, in:
+              <em>South Asia Chronicle</em> 3, 2013, 161-182.</li>
+            <li>„Muslim Youths on Tablīghī Journeys“, in: <em>Asien</em> 126, 2013, 68-84.</li>
+            <li>„Making Muslims Fit for Faiz (God’s Grace): Spiritual and Not-so-Spiritual Transactions Inside the Islamic Missionary Movement Dawat-e Islami“, in:
+              <em>Social Compass</em> 58 (3), 2011, 339-345.</li>
+            <li>„The New Religiosity of Tablīghī Jamāʿat and Daʿwat-e Islāmī and the Transformation of Islam in Europe“, in:
+              <em>Anthropos</em> 105 (1), 2010, 121-136.</li>
+            <li>„Public Religiosity and the Symbols of the Super Muslim: Sunna and Sunnaization in Muslim Faith Movements from South Asia“, in:
+              <em>Third Frame</em> 1 (3), 2008, 43-60.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:1.3rem;">
+        <div class="card">
+          <h3>Buchkapitel (Auswahl)</h3>
+          <ul class="pub-list">
+            <li>„Pakistan zwischen AfPak- und Indopazifik-Strategie“, in: <em>Transatlantische Perspektiven unter Obama und Trump</em>. Wiesbaden: Springer VS, 2023, 427-459.</li>
+            <li>„Daily Piety Drills for Lay Preachers in South Asia: The Tablighi Jama’at and Da’wat-e Islami“, in:
+              <em>Culture of Da‘wa: Preaching Islam in the Modern World</em>. University of Utah Press, 2020, 96-110.</li>
+            <li>„Barelwīs“, in: <em>Encyclopedia of Indian Religions: Islam, Judaism, and Zoroastrianism</em>. Springer, 2018.</li>
+            <li>„Islamization and Barelvis in Pakistan“, in:
+              <em>Faith-Based Violence and Deobandi Militancy in Pakistan</em>. Macmillan, 2016, 369-397.</li>
+            <li>„Barelwis: Developments and Dynamics of Conflict with Deobandis“, in:
+              <em>Sufis and Salafis in the Contemporary Age</em>. Bloomsbury, 2015, 171-189.</li>
+            <li>„From Kalashnikov to Keyboard: Pakistan’s Jihadiscapes and the Transformation of the Lashkar-e Tayba“, in:
+              <em>New Approaches to the Analysis of Jihadism</em>. Vienna University Press, 2011.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Öffentliche Beiträge, Essays &amp; Medien</h3>
+          <ul class="pub-list">
+            <li>Regelmäßige Rubrik „Pakistan im Überblick“ in der Zeitschrift <em>Südasien</em> (seit mehreren Jahrgängen).</li>
+            <li>„Todbringende Prophetenliebe: Das Blasphemie-Gesetz in Pakistan“, in: <em>Jungle World</em> 41/2020.</li>
+            <li>„Das Märchen der Taliban“ und „Mit Steinigung, Bartwuchs und Misogynie zur Nation“, in: <em>Jungle World</em> 34/2021 und 31/2021.</li>
+            <li>„Misstrauen ohne Ende: Regierungswechsel mit Hindernissen in Pakistan“, in: <em>iz3w</em> 391, 2022.</li>
+            <li>„Pakistans Ex-Premier Imran Khan: Nur ein Gast der Polizei“, in: <em>WOXX</em> 1736/2023 sowie <em>Jungle World</em> 20/2023.</li>
+            <li>Zahlreiche Rezensionen und Essays u.a. in <em>Sexuologie</em>, <em>Internationales Asienforum</em>, <em>Wiener Zeitschrift für die Kunde des Morgenlandes</em> und auf dem Wissenschaftsportal der Gerda Henkel Stiftung.</li>
+          </ul>
+          <p class="small" style="margin-top:0.7rem;">
+            Eine ausführliche Liste inkl. Links zu frei zugänglichen PDFs, Essays und Interviews:
+            <br>
+            <a href="https://uni-frankfurt.academia.edu/ThomasGugler" target="_blank" rel="noopener">
+              uni-frankfurt.academia.edu/ThomasGugler
+            </a>
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section id="lebenslauf">
+    <section id="medien">
+      <h2>Medien &amp; Beratung</h2>
+      <p class="section-subtitle">
+        Einschätzungen zu aktuellen Entwicklungen in Pakistan, Afghanistan und Südasien, zu politischem Islam, religiöser Radikalisierung und Sexualpolitik.
+      </p>
+
+      <div class="media-grid">
+        <div class="media-card">
+          <div class="media-kicker">Angebot</div>
+          <div class="media-title">Kurz-Statements &amp; Live-Interviews</div>
+          <p class="small">
+            Einordnung aktueller Ereignisse in Pakistan, Afghanistan und der Region, Hintergrund zu islamistischen
+            Bewegungen, Taliban, Blasphemie-Debatten, Minderheitenpolitik und Außenpolitik.
+          </p>
+        </div>
+
+        <div class="media-card">
+          <div class="media-kicker">Angebot</div>
+          <div class="media-title">Hintergrundgespräche &amp; Fact-Checking</div>
+          <p class="small">
+            Vertrauliche Hintergrundanalyse für Redaktionen, Institutionen und NGOs; Prüfung von Fakten und
+            Narrativen zu politischem Islam, religiöser Mobilisierung und Radikalisierung.
+          </p>
+        </div>
+
+        <div class="media-card">
+          <div class="media-kicker">Angebot</div>
+          <div class="media-title">Keynotes &amp; Fachvorträge</div>
+          <p class="small">
+            Vorträge zu Islam in Südasien, religiöser Pluralität und Gewalt, Gender- und Sexualpolitik, Queer Jihad,
+            Yoga-Geschichte sowie zu transnationalen islamischen Bewegungen.
+          </p>
+        </div>
+
+        <div class="media-card">
+          <span class="badge">Ausgewählte Formate</span>
+          <p class="small" style="margin-top:0.55rem;">
+            • Expertengespräch „Afghanistan &amp; die Taliban“ der Dokumentationsstelle Politischer Islam<br>
+            • Interviews &amp; Essays für <em>Jungle World</em>, <em>WOXX</em>, <em>iz3w</em><br>
+            • Langjährige Mitarbeit und Analysen für <em>Südasien</em><br>
+            • Wissenschaftskommunikation über die Gerda Henkel Stiftung
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv">
       <h2>Lebenslauf (Kurzfassung)</h2>
-      <p><strong>Aktuelle Position</strong><br>
-        Postdoktorand am Frankfurter Forschungszentrum Globaler Islam (FFGI), Goethe-Universität Frankfurt am Main.</p>
+      <p class="section-subtitle">
+        Ausgewählte Stationen. Ein ausführlicher wissenschaftlicher Lebenslauf steht auf Anfrage bzw. als PDF zur Verfügung.
+      </p>
 
-      <p><strong>Ausgewählte Stationen</strong></p>
-      <ul>
-        <li>Postdoktorand, Exzellenzcluster „Normative Ordnungen“, Goethe-Universität Frankfurt a.M.</li>
-        <li>Postdoktorand, Exzellenzcluster „Religion &amp; Politik“, WWU Münster.</li>
-        <li>Postdoktorand, Institut für Orientalistik, Universität Wien („Jihadism Online“).</li>
-        <li>Doktorand am Leibniz-Zentrum Moderner Orient, Berlin („Muslime in Europa“).</li>
-      </ul>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Berufliche Stationen</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-range">seit 10/2024</div>
+              <div class="timeline-role">Postdoktorand</div>
+              <div class="timeline-inst">Frankfurter Forschungszentrum Globaler Islam (FFGI), Goethe-Universität Frankfurt a.M.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-range">2017 – 2021</div>
+              <div class="timeline-role">Postdoktorand, Exzellenzcluster „Normative Ordnungen“</div>
+              <div class="timeline-inst">Goethe-Universität Frankfurt a.M.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-range">2012 – 2016</div>
+              <div class="timeline-role">Postdoktorand, Forschergruppe „Religiöse Pluralität“</div>
+              <div class="timeline-inst">Exzellenzcluster „Religion &amp; Politik“, WWU Münster</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-range">2010 – 2011</div>
+              <div class="timeline-role">Postdoktorand „Jihadism Online“</div>
+              <div class="timeline-inst">Institut für Orientalistik, Universität Wien</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-range">2006 – 2009</div>
+              <div class="timeline-role">Doktorand „Muslime in Europa“</div>
+              <div class="timeline-inst">Leibniz-Zentrum Moderner Orient (ZMO), Berlin</div>
+            </div>
+          </div>
+        </div>
 
-      <p><strong>Abschlüsse</strong></p>
-      <ul>
-        <li>Habilitation (eingereicht 2022), Universität Erfurt.</li>
-        <li>Dr. phil. in Islamwissenschaft, Universität Erfurt, <em>summa cum laude</em>.</li>
-        <li>M.A. in Indologie, Religionswissenschaft und Psychologie, LMU München.</li>
-      </ul>
+        <div class="card">
+          <h3>Ausbildung &amp; weitere Qualifikationen</h3>
+          <ul class="pub-list">
+            <li><strong>Habilitation</strong> (eingereicht 2022), Philosophische Fakultät, Universität Erfurt:
+              <em>„Die Vielfalt der Anderen: Pluralitätskulturen zwischen Freiheit und Gewalt“</em>.</li>
+            <li><strong>Dr. phil. Islamwissenschaft</strong>, Universität Erfurt (2005–2010),
+              <em>summa cum laude</em>.
+              Dissertation: <em>„Muǧāhidīn islamischer Mission: Die Barelwī Tablīġī Ǧamāʿat Daʿwat-e Islāmī“</em>.</li>
+            <li><strong>M.A. (Magister Artium)</strong> in Indologie, Religionswissenschaft und Psychologie,
+              Ludwig-Maximilians-Universität München.</li>
+          </ul>
 
-      <p><strong>Sprachen</strong><br>
-        Deutsch (Muttersprache), Englisch (verhandlungssicher), Urdu und Hindi (fließend), weitere Sprachen u.a. Französisch, Persisch, Arabisch, Latein, Sanskrit.</p>
+          <div class="pub-year" style="margin-top:0.9rem;">Sprachen</div>
+          <p class="small">
+            Deutsch (Muttersprache), Englisch (verhandlungssicher), Urdu &amp; Hindi (fließend),
+            gute Kenntnisse in Französisch, Persisch, Arabisch, Latein und Sanskrit.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="kontakt">
-      <h2>Kontakt</h2>
-      <p>
-        Dr. Thomas K. Gugler<br>
-        Overbergstr. 24<br>
-        D–48145 Münster<br><br>
-        E-Mail: <a href="mailto:thomas.gugler@gmail.com">thomas.gugler@gmail.com</a><br>
-        Academia.edu: <a href="https://uni-frankfurt.academia.edu/ThomasGugler" target="_blank" rel="noopener">uni-frankfurt.academia.edu/ThomasGugler</a>
+      <h2>Kontakt &amp; Downloads</h2>
+      <p class="section-subtitle">
+        Für Interview- und Beratungsanfragen, Vorträge oder Lehrtätigkeiten erreichen Sie mich bevorzugt per E-Mail.
       </p>
+
+      <div class="columns-2 card">
+        <div>
+          <p>
+            <strong>Dr. Thomas K. Gugler</strong><br>
+            Overbergstr. 24<br>
+            D–48145 Münster<br><br>
+            E-Mail:
+            <a href="mailto:thomas.gugler@gmail.com">thomas.gugler@gmail.com</a><br>
+            Academia.edu:
+            <a href="https://uni-frankfurt.academia.edu/ThomasGugler" target="_blank" rel="noopener">
+              uni-frankfurt.academia.edu/ThomasGugler
+            </a>
+          </p>
+
+          <p class="small">
+            Auf Wunsch sende ich Ihnen gerne einen ausführlichen wissenschaftlichen Lebenslauf sowie eine vollständige Publikationsliste als PDF zu.
+          </p>
+        </div>
+
+        <div>
+          <h3 style="font-size:1rem;margin-top:0;">Downloads (optional)</h3>
+          <p class="small">
+            Sie können hier – sobald hinterlegt – aktuelle Unterlagen herunterladen:
+          </p>
+          <ul class="pub-list small">
+            <li><strong>Publikationsliste (vollständig)</strong> – PDF</li>
+            <li><strong>Curriculum Vitae (wissenschaftlich)</strong> – PDF</li>
+            <li><strong>Foto</strong> für Presseverwendung – hochauflösend (JPG)</li>
+          </ul>
+          <p class="small muted">
+            Bitte nennen Sie bei Verwendung des Fotos den Copyright-Hinweis:
+            „© Thomas K. Gugler“.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    &copy; <!-- aktuelles Jahr eintragen --> Dr. Thomas K. Gugler
+    © <span id="year"></span> Dr. Thomas K. Gugler · Diese Seite nutzt keine Tracking-Cookies.
   </footer>
+
+  <script>
+    // aktuelles Jahr automatisch einsetzen
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
